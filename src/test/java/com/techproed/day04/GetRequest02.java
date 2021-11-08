@@ -23,7 +23,10 @@ public class GetRequest02 {
 
     String url= "https://restful-booker.herokuapp.com/booking";
 
-    Response response= given().accept("application/json").when().get(url);
+    Response response= given().
+            accept("application/json").
+            when().
+            get(url);
 
         System.out.println("Status code: "+response.statusCode());
         System.out.println("CT: "+response.contentType());
