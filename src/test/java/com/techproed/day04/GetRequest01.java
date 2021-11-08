@@ -1,5 +1,6 @@
 package com.techproed.day04;
 
+import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -26,10 +27,13 @@ public class GetRequest01 {
 
         //3 request gönderiyoruz.
 
-        given().accept("application/json").when()
+        Response response=given().accept("application/json").when().get(url);
+
         //4 actual result olusturuyoruz. (responce body ile)
+
 
         //5 dogrulama yapiyoruz. (assertion)
 
+        response.prettyPrint();
     }
 }
