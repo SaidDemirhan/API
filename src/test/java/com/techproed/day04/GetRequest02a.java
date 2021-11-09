@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class GetRequest03 {
+public class GetRequest02a {
     /*
        https://restful-booker.herokuapp.com/booking/1001 url'ine
 accept type'i "application/json" olan GET request'i yolladigimda
