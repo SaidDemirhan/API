@@ -1,7 +1,9 @@
 package com.techproed.day5;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
+import static org.hamcrest.Matchers.*;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -53,5 +55,12 @@ ve checkout date'in 2020-09-30 oldugunu test edin
                 body("bookingdates.checkout",Matchers.equalTo("2021-10-18"));
 
 
+
+            response.then().assertThat().statusCode(200).contentType(ContentType.JSON).
+                    body("firstname",equalTo("Susan"),
+                            "lastname",equalTo("Jackson"),
+                            "totalprice",equalTo(811),
+                            "bookingdates.checkin",equalTo("2021-08-11"),
+                            "bookingdates.checkout",equalTo("2021-10-18"));
     }
 }
