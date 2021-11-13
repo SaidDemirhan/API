@@ -1,13 +1,18 @@
 package com.techproed.testBase;
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
-public class JsonPlaceHolderTestBase {
-    protected RequestSpecification spec01;
+
+
+public class HerokuAppTestBase {
+
+    protected RequestSpecification spec02;
+
     @Before
     public void setUp(){
-        spec01= new RequestSpecBuilder().
-                setBaseUri("https://jsonplaceholder.typicode.com").
+        spec02= new RequestSpecBuilder().
+                setBaseUri("https://restful-booker.herokuapp.com").
                 build();
     }
 }
