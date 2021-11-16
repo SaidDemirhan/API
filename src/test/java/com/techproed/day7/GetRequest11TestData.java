@@ -47,5 +47,12 @@ public class GetRequest11TestData extends JsonPlaceHolderTestBase {
         //3. yöntem  deserialization
         //   --object mapper
         //   --pojo class ile birlite map
+
+        HashMap<String,Object> actualData=response.as(HashMap.class);//deserialization
+
+        Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
+        Assert.assertEquals(expectedData.get("title"),actualData.get("title"));
+        Assert.assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
     }
 }
