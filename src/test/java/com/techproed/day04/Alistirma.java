@@ -21,6 +21,7 @@ public class Alistirma {
         String url = "https://restful-booker.herokuapp.com/booking/10";
 
         // 2- Expected Data'yi hazirla
+        //....
         // 3- Response'u kaydet
 
         Response response = given().when().get(url);
