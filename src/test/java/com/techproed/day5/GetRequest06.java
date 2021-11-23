@@ -36,7 +36,8 @@ public class GetRequest06 extends JsonPlaceHolderTestBase {
                 assertThat().
                 statusCode(200).
                 contentType("application/json").
-                header("Server", equalTo("cloudflare")).body("userId",equalTo(7),
+                header("Server", equalTo("cloudflare")).
+                body("userId",equalTo(7),
                         "title",equalTo("esse et quis iste est earum aut impedit"),
                         "completed",equalTo(false));
 
