@@ -29,14 +29,14 @@ public class GetRequest11TestData extends JsonPlaceHolderTestBase {
                 when().
                 get("/{parametre1}/{parametre2}");
         response.prettyPrint();
-        //1. yöntem Mathers class ile assertion işlemi yaptık
+        //1. yöntem Mathers class ile assertion işlemi
         response.then().assertThat().statusCode((Integer) expectedData.get("statusCode")).
                 headers("via", equalTo(expectedData.get("via")),
                         "Server", equalTo(expectedData.get("Server"))).
                 body("userId", equalTo(expectedData.get("userId")),
                         "title", equalTo(expectedData.get("title")),
                         "completed", equalTo(expectedData.get("completed")));
-        //2. yöntem
+        //2. yöntem JsonPath
         JsonPath jsonPath = response.jsonPath();
         Assert.assertEquals(expectedData.get("statusCode"), response.statusCode());
         Assert.assertEquals(expectedData.get("via"), response.getHeader("via"));
