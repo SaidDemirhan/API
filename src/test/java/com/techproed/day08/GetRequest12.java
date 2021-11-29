@@ -45,8 +45,11 @@ public class GetRequest12 extends HerokuAppTestBase {
 
         //request gönder
 
-        Response response= given().accept("application/json").spec(spec02).when().
-         get("/{parametre1}/{parametre2}");
+        Response response= given().
+                accept("application/json").
+                spec(spec02).
+                when().
+                get("/{parametre1}/{parametre2}");
 
         response.prettyPrint();
 
