@@ -54,7 +54,7 @@ public class GetRequest13 extends DummyTestBase {
         //önce actual datadan bize dönen listin size ini almalıyız
         int datasize= ((List) actualDataMap.get("data")).size();
         Assert.assertEquals(expectedDataMap.get("sondanikincicalisanmaasi"),
-                ((Map)((List<?>) actualDataMap.get("data")).get(datasize-2)).get("employee_salary"));
+                ((Map)((List) actualDataMap.get("data")).get(datasize-2)).get("employee_salary"));
 
         //40,21 ve 19 yaslarında çalışanlar olup olmadığını
 
@@ -78,18 +78,17 @@ public class GetRequest13 extends DummyTestBase {
     } gibi olduğunu test edin.*/
 
         Assert.assertEquals(((Map)expectedDataMap.get("onbirincicalisan")).get("employee_name"),
-                ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_name"));
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_name"));
 
 
-        Assert.assertEquals(((Map<?, ?>) expectedDataMap.get("onbirincicalisan")).get("employee_salary"),
+        Assert.assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_salary"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_salary"));
 
-        ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_salary"));
+        Assert.assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_age"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_age"));
 
-        Assert.assertEquals(((Map<?, ?>) expectedDataMap.get("onbirincicalisan")).get("employee_age"),
-                ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_age"));
-
-        Assert.assertEquals(((Map<?, ?>) expectedDataMap.get("onbirincicalisan")).get("profile_image"),
-                ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("profile_image"));
+        Assert.assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("profile_image"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("profile_image"));
         }
 
 
