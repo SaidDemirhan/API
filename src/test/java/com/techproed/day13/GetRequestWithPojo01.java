@@ -1,5 +1,6 @@
 package com.techproed.day13;
 
+import com.google.gson.Gson;
 import com.techproed.pojos.Data;
 import com.techproed.pojos.DummyPojo;
 import com.techproed.testBase.DummyTestBase;
@@ -52,5 +53,16 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
         Assert.assertEquals(expectedData.getData().getprofile_image(),
                 actualData.getData().getprofile_image());
         Assert.assertEquals(expectedData.getMessage(),actualData.getMessage());
+
+
+        //Serialization: java yapisinda olan datalari json formatina dönüstürme islemidir
+
+        //Gson sinifindan bir obje üretiyoruz
+
+        Gson gson=new Gson();
+
+        String jsonFromJava=gson.toJson(actualData);
+        System.out.println(jsonFromJava);
+
     }
 }
