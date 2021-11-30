@@ -4,6 +4,7 @@ import com.techproed.testBase.JsonPlaceHolderTestBase;
 import com.techproed.utilities.JsonUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Map;
@@ -55,6 +56,11 @@ public class GetRequestWithObjectMapper01 extends JsonPlaceHolderTestBase {
 
         Map<String,Object> actualData=JsonUtil.convertJsonToJava(response.asString(),Map.class);
         System.out.println(actualData);
+
+        Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
+        Assert.assertEquals(expectedData.get("id"),actualData.get("id"));
+        Assert.assertEquals(expectedData.get("title"),actualData.get("title"));
+        Assert.assertEquals(expectedData.get("completed"),actualData.get("completed"));
 
     }
 
